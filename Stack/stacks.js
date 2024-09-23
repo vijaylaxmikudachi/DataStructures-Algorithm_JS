@@ -55,7 +55,7 @@ class Stack {
   console.log("Stack after pop:");
   stack.printStack(); // Output: 10,20
   
-  //  top element
+  // top element
   console.log("Top element:", stack.top()); // Output: 20
   
   // Check 
