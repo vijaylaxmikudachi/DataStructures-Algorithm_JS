@@ -40,7 +40,7 @@ class Stack {
     }
   }
   
-  // Example usage:
+  
   let stack = new Stack();
   
   // Adding elements to the stack
