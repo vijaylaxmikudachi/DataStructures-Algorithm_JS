@@ -1,0 +1,46 @@
+A Linked List is a linear data structure in which elements are stored in nodes. Each node contains two parts:
+
+Data: Stores the actual data.
+Next: A reference (or pointer) to the next node in the list.
+Unlike arrays, linked lists do not store elements in contiguous memory locations. Instead, they are connected through pointers, allowing for dynamic memory allocation and efficient insertion and deletion operations.
+
+Types of Linked Lists:
+Singly Linked List: Each node points to the next node, and the last node points to null.
+Doubly Linked List: Each node has two references: one to the next node and another to the previous node.
+Circular Linked List: The last node points to the first node, making the list circular.
+Key Characteristics of Linked Lists:
+Dynamic size: Unlike arrays, linked lists grow and shrink dynamically without requiring reallocation.
+Efficient insertion and deletion: Adding or removing elements is efficient, especially at the beginning and the end.
+Sequential access: Unlike arrays, linked lists do not provide constant-time access to elements. 
+                   We need to traverse the list to find a specific element.
+Operations in Linked List
+Insertion:
+
+At the beginning (head): O(1) time because you only need to update the head pointer.
+At the end: O(n) time because you need to traverse the list to reach the last node.
+At a specific index: O(n) time because you may need to traverse up to the index.
+Deletion:
+
+At the beginning (head): O(1) time.
+At the end: O(n) time, as traversal is required.
+At a specific index or based on value: O(n) time because traversal is needed to find the node.
+Searching: O(n) time because the list has to be traversed node by node.
+
+Doubly Linked List (Optional)
+In a Doubly Linked List, each node has two pointers:
+
+One pointing to the next node.
+One pointing to the previous node.
+This allows traversal in both directions but consumes more memory due to the additional pointer.
+
+When to Use Linked Lists
+Dynamic size: When the number of elements is unknown and can grow or shrink frequently.
+Frequent insertions/deletions: When you need efficient insertion/deletion at the start or end (e.g., queues).
+Avoiding memory reallocation: Unlike arrays, linked lists avoid the need for resizing as they grow dynamically.
+
+  Feature                  Linked List                                                         Array
+	
+Memory                     Allocation	Dynamic, scattered	Contiguous,                     fixed size
+Access Time	               O(n), sequential	                                                O(1), random
+Insertion/Deletion	       Efficient at the beginning or end	                            Expensive (requires shifting)
+Memory Usage	           More (due to pointers)	                                        Less (only data)
