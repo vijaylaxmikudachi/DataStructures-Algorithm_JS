@@ -1,0 +1,47 @@
+Complexity:
+Complexity in computer science refers to the resources required by an algorithm to solve a problem, 
+particularly in terms of time and space. 
+These resources help us understand how efficiently an algorithm scales as the input size grows.
+1.Best case
+2.Average case
+3.Worst case
+
+Time Complexity:
+
+Definition: It measures how the execution time of an algorithm changes with respect to the size of the input.
+Purpose: Helps predict the execution time for larger inputs, 
+         making it easier to choose more efficient algorithms for given tasks.
+Expressed as: Big-O notation (O), which shows the worst-case scenario of how the time grows as the input size increases.
+
+Examples of time complexities:
+
+1.Constant time    O(1): (e.g., accessing an element in an array).
+2Linear time      O(n): (e.g., traversing an array).
+3.Quadratic time   O(n^2): (e.g., nested loops over an array).
+4.Logarithmic time O(log n):  (e.g., binary search).
+
+Visualizing Complexity
+
+Constant Time (O(1)): Stays flat regardless of input size.
+Linear Time (O(n)): Grows proportionally with the input size.
+Quadratic Time (O(n^2)): Grows exponentially with nested loops.
+Logarithmic Time (O(log n)): Grows slowly as input size increases.
+
+Space Complexity:
+
+Definition: It measures the amount of memory or space an algorithm uses in relation to the input size.
+Purpose: Helps predict the memory requirements of an algorithm, 
+         which is important for optimizing the use of system resources.
+Expressed as: Also in Big-O notation, it accounts for both the input space and any additional space required.
+
+O(1): Constant space (e.g., a fixed number of variables).
+O(n): Linear space (e.g., storing an array of size n).
+
+Why is Complexity Important?
+
+1.Compare different algorithms and choose the best one for the problem.
+2.Optimize performance, particularly when working with large data sets.
+3.Predict the scalability of the program as input size increases.
+
+
+
