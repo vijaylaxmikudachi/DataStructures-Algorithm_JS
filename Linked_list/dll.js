@@ -1,120 +1,123 @@
-class Node{
-    constructor(data){
-        this.head = data;
-        this.prev = null;
-        this.next = null;
+class Node {
+    constructor(data) {
+      this.data = data; // Initialize with data
+      this.prev = null;
+      this.next = null;
     }
-}
-class doublylinkedlist{
-    constructor(data){
-        this.head = null;
+  }
+  
+  class doublylinkedlist {
+    constructor(data) {
+      this.head = null;
     }
-    addFirst(data){
-        let newNode = new Node(data);
+  
+    addFirst(data) {
+      let newNode = new Node(data);
+      newNode.next = this.head;
+      if (this.head) {
+        this.head.prev = newNode;
+      }
+      this.head = newNode;
+    }
+  
+    addLast(data) {
+      let newNode = new Node(data);
+      if (!this.head) {
+        this.head = newNode;
+        return;
+      }
+      let current = this.head;
+      while (current.next != null) {
+        current = current.next;
+      }
+      newNode.prev = current;
+      current.next = newNode;
+    }
+  
+    size() {
+      let count = 0;
+      let current = this.head;
+      while (current) {
+        count++;
+        current = current.next;
+      }
+      return count;
+    }
+  
+    addAt(index, data) {
+      if (index < 0 || index > this.size) {
+        console.log("Out of bound");
+        return;
+      }
+      let newNode = new Node(data);
+      if (index === 0) {
         newNode.next = this.head;
-        if(this.head){
-            this.head.prev = newNode;
+        if (this.head) {
+          this.head.prev = newNode;
         }
         this.head = newNode;
+        return;
+      }
+      let current = this.head;
+      for (let i = 0; i < index && current != null; i++) {
+        current = current.next;
+      }
+      if (!current) {
+        console.log("Index out of range");
+        return;
+      }
+      newNode.prev = current.prev;
+      newNode.next = current;
+      if (current.prev) {
+        current.prev.next = newNode;
+      }
+      current.prev = newNode;
     }
-    addLast(data){
-        let newNode = new Node(data);
-        if(!this.head){
-            this.head = newNode;
-        }
-        let current = this.head;
-        while(current.next){
-            current = current.next;
-        }
-        newNode.prev = current;
-         current.next = newNode;
+  
+    removeFirst() {
+      if (!this.head) {
+        return;
+      }
+      this.head = this.head.next;
+      if (this.head) {
+        this.head.prev = null;
+      }
     }
-    size(){
-        let count = 0;
-        let current = this.head;
-        while(current.next){
-            current = current.next;
-            count++
-        }
-        return count;
+  
+    removeLast() {
+      if (!this.head) {
+        return;
+      }
+      if (!this.head.next) {
+        this.head = null;
+        return;
+      }
+      let current = this.head;
+      while (current.next.next) {
+        current = current.next;
+      }
+      current.next = null;
     }
-    addAt(index,data){
-        if(index<0 || index>this.size){
-            console.log("Out of bound")
-        }
-        let newNode = new Node(data);
-        if(index === 0){
-            newNode.next = this.head;
-            if(this.head){
-                this.head.prev = newNode;
-            }
-            this.head = newNode;
-        }
-        let current = this.head;
-        for(let i=0 ; i<index ;i++){
-            current = current.next;
-        }
-        newNode.prev = current;
-        newNode.next = current.next;
-        if(current.next){
-            current.next.prev = newNode;
-        }
-        current.next = newNode;
+  
+    removeAt(index) {
+      if (index < 0 || index > this.size) {
+        console.log("Out of bound");
+        return;
+      }
+      // ... rest of removeAt implementation
     }
-    removeFirst(){
-        if(!this.head){
-            return;
-        }
-        this.head = this.head.next;
-        if(this.head){
-            this.head.prev = null;
-        }
+  
+    print() {
+      let current = this.head;
+      while (current != null) {
+        console.log(current.data); // Use console.log here
+        current = current.next;
+      }
     }
-    removeLast(){
-        if(!this.head){
-            return;
-        }
-        if(!this.head.next){
-            this.head = null;
-            return;
-        }
-        let current = this.head;
-        while(current.next.next){
-            current = current.next;
-        }
-        current.next = null;
-    }
-    removeAt(index){
-        if(index<0 || index>this.size){
-            console.log("Ount of bound")
-        }
-        if(index === 0){
-            this.head = this.head.next;
-            if(this.head){
-                this.head.prev = null;
-            }
-        }
-        let current = this.head
-        for(let i=0 ; i<index-1;i++){
-            current = current.next;
-        }
-        if(current.next){
-            current.next = current.next.next;
-            if(current.next){
-                current.next.prev = current;
-            }
-        }
-    }
-    print(){
-        let current = this.head;
-        while(current){
-            console.log(current.data);
-            current = current.next;
-        }
-    }
-}
-let dll = new doublylinkedlist(100);
-dll.addFirst(200);
-dll.addFirst(300);
-dll.addAt(1,1000);
-dll.print();
+  }
+  
+  let dll = new doublylinkedlist(100);
+  dll.addFirst(200);
+  dll.addFirst(300);
+  dll.addAt(1,1000);
+  dll.print();
