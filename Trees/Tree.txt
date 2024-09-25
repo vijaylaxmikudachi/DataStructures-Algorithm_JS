@@ -1,0 +1,79 @@
+Tree:
+A tree data structure is a hierarchical structure consisting of nodes connected by edges. 
+In this structure, each node contains a value or data and has references (edges) to other nodes, called children. 
+The node at the top of the tree is called the root, and nodes with no children are called leaves. 
+Trees are widely used in computer science for various purposes like 
+representing hierarchical data, managing sorted data, and more.
+
+Node: A single element in the tree that contains data and references to child nodes.
+Root: The topmost node in the tree.
+Child: A node connected to another node (parent).
+Parent: A node that has one or more child nodes.
+Leaf: A node with no children.
+Edge: A connection between two nodes.
+
+      1
+     / \
+    2   3
+
+Binary Tree:
+
+A binary tree is a specific type of tree data structure where each node has at most two children, 
+referred to as the left child and the right child. 
+This structure imposes a strict limit on the number of child nodes, 
+making binary trees highly efficient for operations like searching, sorting, and hierarchical data storage.
+
+      10
+     /  \
+    5   20
+   / \   / \
+  3   8 15  25
+
+Types of Binary Trees:
+1.Full Binary Tree:     Every node has either 0 or 2 children (no node has only one child).
+        1
+       / \
+      2   3
+     / \   
+    4   5
+
+2.Perfect Binary Tree:  All interior nodes have two children, and all leaf nodes are at the same level.
+        1
+       / \
+      2   3
+     / \  / \
+    4   5 6  7
+
+3.Complete Binary Tree: All levels are fully filled except possibly for the last, which is filled from the left.
+        1
+       / \
+      2   3
+     / \  /
+    4   5 6
+
+4.Balanced Binary Tree: A binary tree where the height difference between the left and right subtrees of any node 
+                        is at most 1.
+        1
+       / \
+      2   3
+     / \  
+    4   5
+
+5.Degenerate or Skewed Tree: A tree where each parent node has only one child, 
+                             resulting in a structure similar to a linked list.
+left
+        1
+       /
+      2
+     /
+    3
+   /
+  4
+right
+    1
+     \
+      2
+       \
+        3
+         \
+          4
