@@ -51,6 +51,29 @@ class Btree{
             return this.search(root.right,val);
         }
     }
+    //Traversing 
+    preOrder(root){
+        if(root){
+            console.log(root);
+            this.preOrder(root.left);
+            this.preOrder(root.left);
+        }
+    }
+    inOrder(root){
+        if(root){
+            
+            this.inOrder(root.left);
+            console.log(root);
+            this.inOrder(root.left);
+        }
+    }
+    postOrder(root){
+        if(root){
+            this.postOrder(root.left);
+            this.postOrder(root.left);
+            console.log(root);
+        }
+    }
 }
 
 let bt = new Btree();
@@ -61,6 +84,9 @@ console.log(bt);
 
 console.log(bt.search(bt.root,20));
 
+bt.inOrder(bt.root);
+bt.postOrder(bt.root);
+bt.preOrder(bt.root);
 // Class 
 class BinaryTreeNode {
     constructor(value) {
