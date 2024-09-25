@@ -1,0 +1,18 @@
+Graphs:
+
+A graph data structure is a collection of nodes (also called vertices) and edges (connections between nodes) 
+that can represent various real-world structures like social networks, transportation routes, or dependency graphs. 
+In a graph, there can be directed edges (one-way relationships) or undirected edges (two-way relationships). 
+Graphs can also be weighted, where edges have associated values, such as distance or cost.
+
+Graph representation
+1. Adjacency List
+The adjacency list is one of the most common ways to represent a graph. 
+In this representation, each node stores a list of its adjacent nodes (neighbors).
+
+2. Adjacency Matrix
+Another way to represent a graph is with an adjacency matrix.  
+a 2D array (matrix) is used where each cell (i, j) represents the presence or absence of an edge between vertices i and j.
+
+3. Edge List
+This is a simple representation where edges are stored as a list of pairs.
