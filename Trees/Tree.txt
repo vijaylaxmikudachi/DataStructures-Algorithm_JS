@@ -77,3 +77,24 @@ right
         3
          \
           4
+
+Binary Search Tree (BST):
+
+A Binary Search Tree (BST) is a special type of binary tree where nodes are organized according to specific rules:
+Left Subtree: All nodes in the left subtree have values less than the value of the parent node.
+Right Subtree: All nodes in the right subtree have values greater than the value of the parent node.
+This structure allows for efficient searching, insertion, and deletion operations, 
+with an average time complexity of O(log n) for balanced trees.
+A BST helps in quickly finding elements because it narrows down the search path to 
+either the left or right subtree based on comparisons.
+
+       10
+      /  \
+     5    20
+    / \   / \
+   3   8 15  25
+
+Binary Tree: when we want to represent hierarchical data without needing to perform ordered operations 
+             like searching, inserting, or deleting elements efficiently 
+             (e.g., DOM structure, general tree representations).
+Binary Search Tree (BST): when we need to maintain sorted data and perform efficient search, insert, and delete operations.
