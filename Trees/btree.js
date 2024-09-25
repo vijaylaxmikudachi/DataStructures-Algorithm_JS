@@ -61,4 +61,22 @@ console.log(bt);
 
 console.log(bt.search(bt.root,20));
 
+// Class 
+class BinaryTreeNode {
+    constructor(value) {
+        this.value = value;
+        this.left = null;  // Left 
+        this.right = null; // Right 
+    }
+}
+
+const root = new BinaryTreeNode(10);
+root.left = new BinaryTreeNode(5);
+root.right = new BinaryTreeNode(20);
+root.left.left = new BinaryTreeNode(3);
+root.left.right = new BinaryTreeNode(8);
+root.right.left = new BinaryTreeNode(15);
+root.right.right = new BinaryTreeNode(25);
+
+console.log(root);
 
