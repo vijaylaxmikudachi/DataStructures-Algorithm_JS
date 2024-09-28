@@ -1,0 +1,38 @@
+1. Bubble Sort
+Worst Case: O(n²) (When the array is sorted in reverse order)
+Best Case: O(n) (When the array is already sorted)
+Average Case: O(n²)
+Space Complexity: O(1) (In-place sorting)
+
+2. Insertion Sort
+Worst Case: O(n²) (When the array is sorted in reverse order)
+Best Case: O(n) (When the array is already sorted)
+Average Case: O(n²)
+Space Complexity: O(1) (In-place sorting)
+
+3. Selection Sort
+Worst Case: O(n²)
+Best Case: O(n²) (Even if the array is sorted, it still performs the same number of comparisons)
+Average Case: O(n²)
+Space Complexity: O(1) (In-place sorting)
+
+4. Merge Sort
+Worst Case: O(n log n)
+Best Case: O(n log n)
+Average Case: O(n log n)
+Space Complexity: O(n) (Due to the extra space required for merging)
+
+5. Quick Sort
+Worst Case: O(n²) (Occurs when the pivot chosen is consistently the smallest or largest element, e.g., if the array is already sorted and a poor pivot is chosen)
+Best Case: O(n log n) (When the pivot divides the array into two nearly equal halves)
+Average Case: O(n log n)
+Space Complexity:
+In-place QuickSort: O(log n) (for the recursion stack)
+Non in-place (using extra arrays): O(n)
+
+When to Use Each Algorithm:
+1.  Bubble Sort, Insertion Sort, and Selection Sort are generally avoided for large datasets 
+    due to their poor average-case performance (O(n²)).
+2.  Merge Sort is good for larger datasets and guarantees O(n log n) time, but it requires extra space.
+3.  Quick Sort is often the preferred choice due to its fast average-case performance (O(n log n)), 
+    but care should be taken with the pivot selection to avoid the worst case.
