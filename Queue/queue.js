@@ -62,4 +62,66 @@ class Queue {
   
   // Get the size of the queue
   console.log("Queue size:", queue.size()); // Output: 2
-  
+  class QueueUsingStacks {
+    constructor() {
+        this.stack1 = []; // Enqueue stack
+        this.stack2 = []; // Dequeue stack
+    }
+
+    // Add element to the queue
+    enqueue(element) {
+        this.stack1.push(element);  // Add to the top of stack1
+    }
+
+    // Remove and return the element from the front of the queue
+    dequeue() {
+        if (this.stack2.length === 0) {
+            // If stack2 is empty, move all elements from stack1 to stack2
+            while (this.stack1.length > 0) {
+                this.stack2.push(this.stack1.pop());
+            }
+        }
+
+        // If stack2 is still empty, the queue is empty
+        if (this.stack2.length === 0) {
+            return "Queue is empty";
+        } else {
+            return this.stack2.pop();  // Remove from the top of stack2
+        }
+    }
+
+    // Get the front element of the queue
+    front() {
+        if (this.stack2.length === 0) {
+            while (this.stack1.length > 0) {
+                this.stack2.push(this.stack1.pop());
+            }
+        }
+
+        if (this.stack2.length === 0) {
+            return "Queue is empty";
+        } else {
+            return this.stack2[this.stack2.length - 1];
+        }
+    }
+
+    // Check if the queue is empty
+    isEmpty() {
+        return this.stack1.length === 0 && this.stack2.length === 0;
+    }
+}
+function mergeQueues(queue1, queue2) {
+  let mergedQueue = new Queue();
+
+  // Merge elements from both queues
+  while (!queue1.isEmpty() || !queue2.isEmpty()) {
+      if (!queue1.isEmpty()) {
+          mergedQueue.enqueue(queue1.dequeue());
+      }
+      if (!queue2.isEmpty()) {
+          mergedQueue.enqueue(queue2.dequeue());
+      }
+  }
+
+  return mergedQueue;
+}

@@ -9,6 +9,7 @@ class Node {
   class doublylinkedlist {
     constructor(data) {
       this.head = null;
+      this.tail = null;
     }
   
     addFirst(data) {
@@ -114,6 +115,14 @@ class Node {
         current = current.next;
       }
     }
+    printrev(){
+      let current = this.tail;
+      while(current!=null){
+        console.log(current.data);
+        current = current.prev;
+       
+      }
+    }
   }
   
   let dll = new doublylinkedlist(100);
@@ -121,3 +130,7 @@ class Node {
   dll.addFirst(300);
   dll.addAt(1,1000);
   dll.print();
+  dll.printrev();
+
+console.log("Head:", dll.head);
+console.log("Tail:", dll.tail);
